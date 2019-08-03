@@ -32,3 +32,11 @@ ingress {
   protocol    = "-1"
   cidr_blocks = ["0.0.0.0/0"]
 }
+
+  tags = {
+    Name       = "${var.Name}"
+    Env        = "${var.Env}"
+    Created_by = "${var.Created_by}"
+    Dept       = "${var.Dept}"
+  }
+}
