@@ -1,17 +1,12 @@
-resource "aws_instance" "web1" {
+resource "aws_instance" "mysql" {
   ami                    = "${var.ami}"
   instance_type          = "${var.instance_type}"
   key_name               = "${var.key_name}"
-  subnet_id              = "${aws_subnet.privet.id}"
+  subnet_id              = "${aws_subnet.private.id}"
   user_data              = "${file("userdata.sh")}"
-  vpc_security_group_ids = ["${aws_security_group.privetDB.id}"]
-
-
-
-
-
+  vpc_security_group_ids = ["${aws_security_group.privateDB.id}"]
   tags = {
-    Name       = "${var.Name}.MySQL"
+    Name       = "${var.Name}.MYSQL"
     Env        = "${var.Env}"
     Created_by = "${var.Created_by}"
     Dept       = "${var.Dept}"
