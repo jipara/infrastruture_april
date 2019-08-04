@@ -1,11 +1,11 @@
-module "wordpress" {
+module "${var.appname}" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "3.0"
 
-  name = "wordpress"
+  name = "${var.appname}"
 
   # Launch configuration
-  lc_name = "wordpress-lc"
+  lc_name = "${var.appname}-lc"
 
   image_id        = "${var.ami}"
   instance_type   = "${var.instance_type}"
