@@ -9,7 +9,7 @@ module "mysql" {
 
   image_id        = "${var.ami}"
   instance_type   = "${var.instance_type}"
-  security_groups = ["${aws_security_group.privetDB.id}"]
+  security_groups = ["${aws_security_group.privet.id}"]
 
 
 
